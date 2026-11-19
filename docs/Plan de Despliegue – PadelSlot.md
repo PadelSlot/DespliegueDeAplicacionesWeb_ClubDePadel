@@ -8,17 +8,6 @@ Somos un equipo de 4 desarrolladores. Hemos aplicado lo que hemos visto en el m�
 
 Este documento es nuestro plan: recoge las decisiones que hemos tomado y cómo las llevaremos a cabo cuando implementemos el despliegue. Cada fase explica **qué decidimos**, **cómo lo haremos** y **por qué**, y al final hay una hoja de ruta con el orden de trabajo y el reparto entre los 4\.
 
-| Capa | Tecnología | Por qué la elegimos |
-| :---- | :---- | :---- |
-| Código y trabajo en equipo | Git \+ GitHub | Ya lo usamos en el proyecto y se integra con Vercel y GitHub Actions |
-| Frontend | Angular | TypeScript, componentes reutilizables y diseño adaptable al móvil |
-| Alojamiento del frontend | Vercel | Despliegue automático, HTTPS, CDN y una URL de prueba por cada Pull Request |
-| Backend (API REST) | Node.js \+ Express en Docker | Mismo lenguaje que Angular (TypeScript); el contenedor funciona igual en los 4 portátiles y en el servidor |
-| Servidor web / proxy inverso | Nginx (en Docker) | HTTPS con Let's Encrypt, balanceo entre contenedores, CORS, caché y límite de peticiones |
-| Servidor | Máquina virtual Ubuntu en Oracle Cloud (Always Free) | Gratis y con recursos de sobra: hasta 4 OCPU y 24 GB de RAM ([Oracle](https://docs.oracle.com/en-us/iaas/Content/FreeTier/resourceref.htm)) |
-| Base de datos y login | Supabase (PostgreSQL \+ Auth) | Base de datos relacional gestionada y login con JWT incluido |
-| CI/CD | GitHub Actions | Build, pruebas, imágenes Docker y despliegue automáticos |
-
 ## **Fase 1: Control de versiones y trabajo en equipo**
 
 Trabajaremos con Git en GitHub, en un único repositorio y con un GitFlow simplificado. Ningún cambio llegará a producción sin un Pull Request revisado por otro compañero y con todas las pruebas superadas.
